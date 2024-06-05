@@ -7,10 +7,14 @@ const app = express();
 const port = 3000;
 const connection = require("./infra/connection");
 const itensTable = require("./infra/itensTable");
+const userTable = require("./infra/userTable");
+
+router(app, express);
 
 itensTable.init(connection);
+userTable.init(connection);
 
-router(app);
+
 
 app.listen(port, (error) => {
     if(error) {

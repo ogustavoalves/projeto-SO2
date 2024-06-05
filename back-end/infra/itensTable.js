@@ -7,7 +7,7 @@ class itensTable {
     createItensTable() {
         const sql = `
         create table IF NOT EXISTS Item ( 
-            id_item int primary key not null auto_increment,
+            id int primary key not null auto_increment,
             nome_item varchar(30),
             foto_item varchar(50),
             descricao_item varchar(40),
@@ -22,13 +22,16 @@ class itensTable {
         `
         this.connection.query(sql, (error) => {
             if(error) {
-                console.log("Erro ao criar tabela");
+                console.log("Erro ao criar tabela Itens");
                 console.log(error);
                 return;
             }
-            console.log("Tabela criada com sucesso")
+            console.log("Conexão estabelecida com sucesso")
+            console.log("Tabela Itens criada com sucesso")
         });
     }
+
+
 }
 
 module.exports = new itensTable();
