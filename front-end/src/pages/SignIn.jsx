@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { App } from "../layouts/App"
 import { useForm } from "react-hook-form";
 
-import '../assets/styles/loginForms.css'
+import '../assets/styles/loginForm.css'
 
 export const SignIn = () => {
 
@@ -18,7 +18,7 @@ export const SignIn = () => {
 
     return (
         <App>
-            <div className="form-container">
+            <div className="login-form-container">
                 <h1 className="form-title">Login</h1>
                 <form className="form" autoComplete="on" onSubmit={handleSubmit(handleFormSubmit)}>
                 <div className="input-wrapper">

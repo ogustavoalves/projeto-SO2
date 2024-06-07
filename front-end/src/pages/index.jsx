@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { SignIn } from "./SignIn.jsx"
 import { SignUp } from "./SignUp.jsx";
 import { Home } from "./Home.jsx";
+import { ItensCadastro } from "./ItensCadastro.jsx";
 
 export const Pages = () => {
     
@@ -12,7 +13,7 @@ export const Pages = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/sign-in" element={<SignIn />} />
                 <Route path="/sign-up" element={<SignUp />} />
-                <Route path="/sign-" element={<SignUp />} />
+                <Route path="/cadastro" element={<ItensCadastro/>} />
             </Routes>
         </Router>
     )
