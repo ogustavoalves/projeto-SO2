@@ -16,6 +16,7 @@ class itensTable {
             quantidade_estoque int,
             estoque_min int ,
             categoria enum("Porção", "Bebida", "Combo", "Diversos") default "Diversos", 
+            local_estoque varchar(30),
             informacoes_gerais varchar(150)
         );
         

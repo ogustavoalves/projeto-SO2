@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"; 
 import { App } from "../layouts/App"
-import '../assets/styles/cadastro.css'
+import '../assets/styles/cadastro-itens.css'
 
 export const  ItensCadastro = () => {
     return (
@@ -19,15 +19,15 @@ export const  ItensCadastro = () => {
                     <input type="text" placeholder="Descrição do Item"/>
 
                     <label>Valor de Compra do Item</label>
-                    <input type="number" placeholder="Valor de Compra"/>
+                    <input type="number" step="0.01" placeholder="Valor de Compra"/>
 
                     <label>Valor de Venda do Item</label>
-                    <input type="number" placeholder="Valor de Venda"/>
+                    <input type="number" step="0.01" placeholder="Valor de Venda"/>
 
                     <label>Quantidade no Estoque</label>
                     <input type="number" placeholder="Quantidade no Estoque"/>
 
-                    <label>Quantidade de Estoque Mínimo</label>
+                    <label>Quantidade Mínima no Estoque</label>
                     <input type="number" placeholder="Estoque Mínimo"/>
 
                     
@@ -43,14 +43,19 @@ export const  ItensCadastro = () => {
                         <label htmlFor="Combo">Combo</label>
                     </div>
 
-                    <label>Quantidade no Estoque</label>
+                    <label>Local do Estoque</label>
                     <input type="text" placeholder="Local do Estoque do Item"/>
 
-                    <textarea placeholder="Informações Gerais sobre o Item">
+                    <label htmlFor="info-gerais">Informações Gerais</label>
+                    <textarea id="info-grais" placeholder="Informações Gerais sobre o Item">
 
                     </textarea>
-
-                    <button type="submit">Cadastrar Item</button>
+                    <div className="button-wrapper">
+                        <button className="submit-button-itens" type="submit">
+                            Cadastrar Item
+                        </button>
+                    </div>
+                    
                 </form>
             </div>
         </App>

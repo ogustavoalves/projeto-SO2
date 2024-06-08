@@ -19,8 +19,8 @@ export const SignIn = () => {
     return (
         <App>
             <div className="login-form-container">
-                <h1 className="form-title">Login</h1>
-                <form className="form" autoComplete="on" onSubmit={handleSubmit(handleFormSubmit)}>
+                <h1 className="login-form-title">Login</h1>
+                <form className="login-form" autoComplete="on" onSubmit={handleSubmit(handleFormSubmit)}>
                 <div className="input-wrapper">
                         <input 
                             {...register("email", {
@@ -48,7 +48,7 @@ export const SignIn = () => {
                     <button type="submit" className="submit-button">Acessar</button>
                 </form>
 
-                <p className="">
+                <p className="login-form-paragraph">
                     Não possui uma conta?
                     <span>
                         <Link className="" to={"/sign-up"}>

@@ -1,13 +1,13 @@
-
+const userModel = require("../models/userModel");
 
 class userController {
 
-    create() {
-        return "criando usuário...";
+    create(newUser) {
+        return userModel.createUser(newUser);
     }
 
     read() {
-        return "buscando usuário...";
+        return userModel.readUser();
     }
 
     // update(id) {

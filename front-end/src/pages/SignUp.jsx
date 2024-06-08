@@ -18,9 +18,9 @@ export const SignUp = () => {
 
     return (
         <App>
-            <div className="form-container">
-                <h1 className="form-title">Cadastro</h1>
-                <form className="form" autoComplete="on" onSubmit={handleSubmit(handleFormSubmit)}>
+            <div className="login-form-container">
+                <h1 className="login-form-title">Cadastro</h1>
+                <form className="login-form" autoComplete="on" onSubmit={handleSubmit(handleFormSubmit)}>
                     <div className="input-wrapper">
                         <input
                             {...register("email", {
@@ -49,14 +49,14 @@ export const SignUp = () => {
                     <button className="submit-button">Criar Conta</button>
                 </form>
 
-                <p className="">
+                <p className="login-form-paragraph">
                     Já possui cadastro?
                     <span>
                         <Link className="" to={"/sign-in"}>
                             Acessar conta
                         </Link>
                     </span>
-                    </p>
+                </p>
             </div>
         </App>
     )
