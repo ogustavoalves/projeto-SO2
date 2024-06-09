@@ -1,8 +1,9 @@
 .login-form-container {
-    margin-top: 30vh;
+    margin: 30vh auto;
     width: 25vw;
     height: 35vh;
     padding: 1.5rem;
+    
 
     display: flex;
     flex-direction: column;
@@ -70,8 +71,12 @@
 .submit-button:hover {
     background-color: var(--cor-ativa);
     filter: brightness(1.1);
-    transform: scale(1.1);
+    
 
+}
+
+.submit-button:active {
+    transform: scale(1.1);
 }
 
 .login-form-paragraph {

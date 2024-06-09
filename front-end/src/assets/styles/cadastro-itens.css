@@ -1,8 +1,9 @@
 .form-container {
-    margin: 5vh ;
+    margin: 3vh auto;
     width: 47vw;
     height: 105vh;
     padding: 2rem;
+
 
     font-family: Arial, Helvetica, sans-serif;
 
@@ -12,6 +13,8 @@
     backdrop-filter: blur(4.2px);
     -webkit-backdrop-filter: blur(4.2px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+
+    
 }
 
 .form-title {
@@ -28,9 +31,6 @@
 
     font-size: 1.1rem;
 }
-
-
-
 
 .form input {
     width: 40vw;
@@ -81,6 +81,10 @@
 .submit-button-itens:hover {
     background-color: var(--cor-ativa);
     filter: brightness(1.1);
+
+}
+
+.submit-button-itens:active {
     transform: scale(1.1);
 
 }

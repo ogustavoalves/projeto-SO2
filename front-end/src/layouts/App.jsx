@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-
-export const App = ({ children }) => <>{children}</>;
+import '../assets/styles/App.css'
+export const App = ({ children }) => <div style={{width: `100vw`}}>{children}</div>;
 
 App.propTypes = {
   children: PropTypes.node,

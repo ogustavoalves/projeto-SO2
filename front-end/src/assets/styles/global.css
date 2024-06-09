@@ -107,8 +107,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  box-sizing: border-box;
   font-family: var(--fonte-principal);
+  overflow-x: hidden;
+  
 }
 
 .content-wrapper {
@@ -120,12 +122,11 @@ body {
 
 ::-webkit-scrollbar {
   background-color: #1d1c3b;
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--cor-active);
-
   border-radius: 3px;
   height: 7em;
 }

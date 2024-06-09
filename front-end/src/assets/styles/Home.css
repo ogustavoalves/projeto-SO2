@@ -1,9 +1,10 @@
 .home-bg {
-    margin: 5vh ;
-    width: 44vw;
+    display: flex;
+    flex-direction: column;
+    margin: 5vh auto ;
+    width: 60vw;
     height: fit-content;
     padding: 2rem;
-    
     font-family: Arial, Helvetica, sans-serif;
 
     background: rgba(255, 255, 255, 0.1);
@@ -12,8 +13,8 @@
     backdrop-filter: blur(4.2px);
     -webkit-backdrop-filter: blur(4.2px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-
 }
+
 
 .home-title {
     margin-bottom: 2vh;
@@ -22,9 +23,8 @@
 }
 
 .search-container {
-    display: flex;
-    flex-direction: column;
     gap: 0.6vh;
+    
 }
 
 .search-input-wrapper {
@@ -64,13 +64,14 @@
 }
 
 .itens-wrapper {
-    width: 45vw;
-    height: fit-content;
     display: flex;
     flex-direction: column;
-    justify-items: center;
+    align-items: stretch;
+    width: 65vw;
+    height: fit-content;
     
     gap: 2vh;
 
+    margin-left: auto;
     
 }

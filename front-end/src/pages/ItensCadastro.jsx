@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom"; 
 import { App } from "../layouts/App"
+import { Header } from "../pages/Header"
 import '../assets/styles/cadastro-itens.css'
 
 export const  ItensCadastro = () => {
     return (
         <App>
+            <Header></Header>
             <div className="form-container">
                 <h1 className="form-title">Cadastro de Item</h1>
                 <form className="form">

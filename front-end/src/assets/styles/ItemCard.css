@@ -2,8 +2,8 @@
 .card-wrapper {
     display: flex;
     flex-direction: column;
-    width: 42vw;
-    padding: 1rem;
+    width: 55vw;
+    padding: 2rem;
 
     background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
