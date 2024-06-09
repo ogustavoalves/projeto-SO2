@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"; 
 import { App } from "../layouts/App"
 import { Header } from "../pages/Header"
-import '../assets/styles/cadastro-itens.css'
+import '../assets/styles/CadastroItens.css'
 
 export const  ItensCadastro = () => {
     return (

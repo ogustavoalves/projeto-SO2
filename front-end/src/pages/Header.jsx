@@ -1,4 +1,4 @@
-import '../assets/styles/header.css';
+import '../assets/styles/Header.css';
 import { App } from "../layouts/App"
 
 export const Header = () => {

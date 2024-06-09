@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { App } from "../layouts/App"
 import { useForm } from "react-hook-form";
 
-import '../assets/styles/loginForm.css'
+import '../assets/styles/LoginForm.css'
 
 export const SignIn = () => {
 
