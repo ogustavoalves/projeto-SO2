@@ -9,7 +9,7 @@ export const ItemCard = () => {
             <div className="card-wrapper">
 
                 <div className="img-container">
-                    <img className="img-element" src="../public/imgs/cola can.png" />
+                    <img className="img-element" src="../imgs/cola can.png" />
                 </div>
 
                 <div className="info-wrapper">

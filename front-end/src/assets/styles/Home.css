@@ -27,12 +27,40 @@
     gap: 0.6vh;
 }
 
-.search-container input {
+.search-input-wrapper {
+    display: flex;
+    flex-direction: row;   
+    gap: 0.5vw;
+}
+
+.search-field {
     width: 20vw;
-    padding: 0.7rem;
+    padding: 0.5rem;
     border-radius: 6px;
     border: none;
     margin-bottom: 2vh;
+}
+
+.search-button {
+    height: 1.9em;
+
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: var(--cor-fonte);
+    background-color: var(--cor-ativa);
+
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.search-button:hover {
+    
+    background-color: var(--cor-ativa);
+    filter: brightness(1.1);
+}
+
+.search-button:active {
+    transform: scale(1.1);
 }
 
 .itens-wrapper {
