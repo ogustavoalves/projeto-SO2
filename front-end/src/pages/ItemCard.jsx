@@ -1,7 +1,9 @@
 import { App } from "../layouts/App"
 import '../assets/styles/ItemCard.css'
+import { useEffect } from "react";
 
 export const ItemCard = () => {
+
     return (
         <App>
             <div className="card-wrapper">

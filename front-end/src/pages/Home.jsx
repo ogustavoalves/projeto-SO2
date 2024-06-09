@@ -15,16 +15,6 @@ export const Home = () => {
                 <div className="itens-wrapper">
                     <ItemCard />
                     <ItemCard />
-                    <ItemCard />
-                    <ItemCard />
-                    <ItemCard />
-                    <ItemCard />
-                    <ItemCard />
-                    <ItemCard />
-                    <ItemCard />
-                    <ItemCard />
-                    <ItemCard />
-                    <ItemCard />
                 </div>
                 
             </div>
