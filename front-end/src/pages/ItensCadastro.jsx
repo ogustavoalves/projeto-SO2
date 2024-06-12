@@ -4,18 +4,39 @@ import { App } from "../layouts/App"
 import { Header } from "../pages/Header"
 import '../assets/styles/CadastroItens.css'
 import { useForm } from "react-hook-form";
+import axios from "axios";
+
+const api = axios.create({
+    baseURL: 'http://localhost:3000/'
+})
 
 export const  ItensCadastro = () => {
 
     const {
         register,
         handleSubmit,
+        reset,
+        formState: { errors },
     } = useForm();
 
-    const handleFormInput = ({ nome, foto, descricao, valorCompra, valorVenda, qntdEstoque, estoqueMin, categoria, localEstoque, infoGerais }) => {
-        console.log(`DADOS INPUTADOS: nome: ${nome}, foto: ${foto}, descrição: ${descricao}, valor compra: ${valorCompra}`);
-        console.log(`DADOS INPUTADOS: valor venda: ${valorVenda}, quantidade estoque: ${qntdEstoque}, estoque mínimo: ${estoqueMin}`)
-        console.log(`DADOS INPUTADOS: estoque mínimo: ${estoqueMin}, categoria: ${categoria}, local estoque: ${localEstoque}, informações gerais: ${infoGerais}`)
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState(false);
+
+    const handleFormInput = (data) => {
+
+        api.post('/itens', data).then(res => {
+            console.log('User saved:', res.data);
+            setSuccess(true);
+            setError('');
+            reset();
+            
+        }).catch(err => {
+            setError(err.message);
+            setSuccess(false);
+            console.log('Error:', err);
+        })
+
+        // console.log("ACESSANDO APLICAÇÃO", email, password);
     };
 
     return (
@@ -23,11 +44,13 @@ export const  ItensCadastro = () => {
             <Header></Header>
             <div className="form-container">
                 <h1 className="form-title">Cadastro de Item</h1>
+                {error && <div className="error">Error: {error}</div>}
+                {success && <div className="success">User added successfully!</div>}
                 <form className="form" onSubmit={handleSubmit(handleFormInput)}>
                     
                     <label htmlFor="nome-item">Nome do Item</label>
                     <input 
-                        {...register("nome")}
+                        {...register("nome_item")}
                         type="text" 
                         id="nome-item" 
                         
@@ -35,21 +58,21 @@ export const  ItensCadastro = () => {
                     />
 
                     <label>Foto do Item</label>
-                    <input {...register("foto")}
-                        type="file" 
-                        placeholder="Foto do Item"
+                    <input {...register("foto_item")}
+                        type="text" 
+                        placeholder="URL da imagem do Item"
                     />
 
                     <label>Descrição do Item</label>
                     <input 
-                        {...register("descricao")}
+                        {...register("descricao_item")}
                         type="text" 
                         placeholder="Descrição do Item"
                     />
 
                     <label>Valor de Compra do Item</label>
                     <input 
-                        {...register("valorCompra")}
+                        {...register("valor_compra")}
                         type="number" 
                         step="0.01" 
                         placeholder="Valor de Compra"
@@ -57,7 +80,7 @@ export const  ItensCadastro = () => {
 
                     <label>Valor de Venda do Item</label>
                     <input 
-                        {...register("valorVenda")}
+                        {...register("valor_venda")}
                         type="number" 
                         step="0.01" 
                         placeholder="Valor de Venda"
@@ -65,14 +88,14 @@ export const  ItensCadastro = () => {
 
                     <label>Quantidade no Estoque</label>
                     <input 
-                        {...register("qntdEstoque")}
+                        {...register("quantidade_estoque")}
                         type="number" 
                         placeholder="Quantidade no Estoque"
                     />
 
                     <label>Quantidade Mínima no Estoque</label>
                     <input 
-                        {...register("estoqueMin")}
+                        {...register("estoque_min")}
                         type="number" 
                         placeholder="Estoque Mínimo"
                     />
@@ -120,14 +143,14 @@ export const  ItensCadastro = () => {
 
                     <label>Local do Estoque</label>
                     <input 
-                        {...register("localEstoque")}
+                        {...register("local_estoque")}
                         type="text" 
                         placeholder="Local do Estoque do Item"
                     />
 
                     <label htmlFor="info-gerais">Informações Gerais</label>
                     <textarea 
-                        {...register("infoGerais")}
+                        {...register("informacoes_gerais")}
                         id="info-grais" 
                         placeholder="Informações Gerais sobre o Item"
                     >

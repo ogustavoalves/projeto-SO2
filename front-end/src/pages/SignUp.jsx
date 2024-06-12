@@ -1,25 +1,57 @@
 import { Link } from "react-router-dom";
 import { App } from "../layouts/App"
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import classNames from 'classnames';
 import '../assets/styles/LoginForm.css'
+import axios from "axios";
+
+const api = axios.create({
+    baseURL: 'http://localhost:3000/'
+})
+
 
 export const SignUp = () => {
     
+
+    //useForm
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm();
 
-    const handleFormSubmit = ({ email, password }) => {
-        console.log("ACESSANDO APLICAÇÃO", email, password);
+
+    //hooks form
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState(false);
+
+
+    const handleFormSubmit = (data) => {
+
+        api.post('/user', data).then(res => {
+            console.log('User saved:', res.data);
+            setSuccess(true);
+            setError('');
+            reset();
+            
+        }).catch(err => {
+            setError(err.message);
+            setSuccess(false);
+            console.log('Error:', err);
+        })
+
+        // console.log("ACESSANDO APLICAÇÃO", email, password);
     };
 
     return (
         <App>
             <div className="login-form-container">
                 <h1 className="login-form-title">Cadastro</h1>
+                {error && <div className="error">Error: {error}</div>}
+                {success && <div className="success">User added successfully!</div>}
+
                 <form className="login-form" autoComplete="on" onSubmit={handleSubmit(handleFormSubmit)}>
                     <div className="input-wrapper">
                         <input
@@ -51,7 +83,7 @@ export const SignUp = () => {
                             {...register("password", {
                                 required: true,
                                 maxLength: 255,
-                                minLength: 8,
+                                minLength: 5,
                             })}
                             type="password" 
                             placeholder="Senha" 

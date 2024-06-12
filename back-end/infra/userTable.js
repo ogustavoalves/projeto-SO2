@@ -8,8 +8,8 @@ class usersTable {
         const sql = `
         create table IF NOT EXISTS Usuario (
             id int primary key not null auto_increment,
-            nome varchar(30) ,
-            senha varchar(20) not null
+            email varchar(255) unique not null,
+            password varchar(20) not null
         );
         
         `
