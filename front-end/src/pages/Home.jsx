@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { App } from "../layouts/App"
 import ItemCard from "./ItemCard";
 import Header from "./Header"
 import '../assets/styles/Home.css';
+import axios from "axios";
+
+
+const api = axios.create({
+    baseURL: 'http://localhost:3000/'
+});
 
 export const Home = () => {
     
@@ -10,8 +16,31 @@ export const Home = () => {
 
     function handleSearch(){
         console.log(`Search Value: ${searchValue}`);
+        
     };
+    
+    const [data, setData] = useState(null);
+    const [error, setError] = useState('');
+    
+    useEffect(() => {
+        api.get('/itens').then(res => {
+            console.log('Fetched data:', res.data);
+            setData(res.data);
+        }).catch(err => {
+            setError(err);
+            console.log('Error', err);
+        });
+    }, []);
 
+    if (error) {
+        return <div>Error: {error.message}</div>;
+    }
+
+    if (!data) {
+        return <div>Loading...</div>;
+    }
+
+      
     return (
         <App>
             <Header></Header>
@@ -27,13 +56,21 @@ export const Home = () => {
                         value={searchValue} 
                         onChange={(event) => setSearchValue(event.target.value)}
                     />
-                    <button type="button" className="search-button" onClick={handleSearch}>Pesquisar</button>
+                    <button 
+                        type="button" 
+                        className="search-button" 
+                        onClick={handleSearch}
+                    >
+                        Pesquisar
+                    </button>
                 </div>
                         
                 </div>
                 <div className="itens-wrapper">
-                    <ItemCard />
-                    <ItemCard />
+                    
+                    {data.map((item, index) => (<ItemCard props={item} key={index}/>))}
+                     
+                    
                 </div>                
             </div>
         </App>
