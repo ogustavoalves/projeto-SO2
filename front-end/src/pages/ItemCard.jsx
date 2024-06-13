@@ -25,7 +25,7 @@ export const ItemCard = ({props}) => {
     return (
         <App>
             <div className="card-wrapper">
-
+                
                 <div className="img-container">
                     <img className="img-element" src={props.foto_item} alt={props.nome_item} />
                 </div>
@@ -48,7 +48,10 @@ export const ItemCard = ({props}) => {
                     </p>
                     
                 </div>
-
+                <div className="buttons-container">
+                    <button className="edit-button"><p>editar</p></button>
+                    <button className="delete-button"><p>excluir</p></button>
+                </div>
             </div>
         </App>
     )
