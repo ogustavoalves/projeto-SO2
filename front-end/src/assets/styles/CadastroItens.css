@@ -26,7 +26,7 @@
     display: flex;
     flex-direction: column;
     margin: 5vh;
-    width: 50vw;
+    /* width: 50vw; */
     gap: 7px;
 
     font-size: 1.1rem;
@@ -61,7 +61,7 @@
 .button-wrapper {
     display: flex;
     justify-content: flex-end;
-    width: 42vw;
+    width: 10vw;
     
     margin-top: 2vh;
     margin-bottom: 1vh;
@@ -76,7 +76,7 @@
     padding: 0.3rem;
     font-weight: 500;
     font-size: 1rem;
-    
+    margin-left: auto;
     
 }
 

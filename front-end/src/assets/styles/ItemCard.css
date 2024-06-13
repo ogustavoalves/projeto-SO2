@@ -28,6 +28,13 @@
     padding: 0.6rem;
 }
 
+.edit-button:hover {
+    background-color: var(--cor-ativa);
+    filter: brightness(1.1);
+}
+
+.edit-button:active { transform: scale(1.1); }
+
 .delete-button { 
     margin-left: auto;
     border: none;
@@ -37,6 +44,14 @@
     cursor: pointer;
     padding: 0.5rem;
 }
+
+.delete-button:hover {
+    background-color: var(--cor-ativa);
+    filter: brightness(1.1);
+}
+
+.delete-button:active { transform: scale(1.1); }
+
 
 .img-container {
     display: flex;
@@ -74,11 +89,85 @@
 
 .card-wrapper h5 {
     font-size: 1.2rem;
+    font-weight: 500;   
+}
+
+/* modo de edição */
+
+
+.edit-form-container {
+    border: 1px solid white ;
+    border-radius: 5px;
+    width: 55vw;
+    padding: 2rem;
+    margin-top: 1rem;
+}
+
+.edit-form-container h2 {
+    font-size: large;
     font-weight: 500;
-    
+    margin-bottom: 1.5vh;
 }
 
-.descricao-container {
-    
+.error p{
+    color: red;
 }
 
+.success {
+    color: #4ee44e;
+    margin-bottom: 1.5vh;
+}
+
+.edit-form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.edit-form-container input {
+    width: 15vw;
+    padding: 0.3rem;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 2vh;
+    margin-left: 1vh;
+}
+
+.textarea-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3vw;
+    align-items: stretch;
+}
+
+.edit-form-container textarea {
+    width: 20vw;
+    height: 10vh;
+    resize: none;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.button-wrapper {
+    margin-left: auto;
+    gap: 0.5rem;
+}
+
+.edit-form-container button {
+    width: fit-content;
+
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    padding: 0.6rem;
+}
+
+.edit-form-container button:hover {
+    background-color: var(--cor-ativa);
+    filter: brightness(1.1);
+}
+
+.edit-form-container button:active { transform: scale(1.1);}

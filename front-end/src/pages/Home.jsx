@@ -4,7 +4,7 @@ import ItemCard from "./ItemCard";
 import Header from "./Header"
 import '../assets/styles/Home.css';
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 
 const api = axios.create({
     baseURL: 'http://localhost:3000/'
@@ -12,13 +12,16 @@ const api = axios.create({
 
 export const Home = () => {
     
+    // função de busca
     const [searchValue, setSearchValue] = useState('');
 
     function handleSearch(){
         console.log(`Search Value: ${searchValue}`);
         
     };
-    
+    //--------------
+
+    //get data
     const [data, setData] = useState(null);
     const [error, setError] = useState('');
     
@@ -39,8 +42,10 @@ export const Home = () => {
     if (!data) {
         return <div>Loading...</div>;
     }
+    //----------
+    
 
-      
+
     return (
         <App>
             <Header></Header>
@@ -62,6 +67,15 @@ export const Home = () => {
                         onClick={handleSearch}
                     >
                         Pesquisar
+                    </button>
+                    <button 
+                        type="button" 
+                        className="cadastro-button" 
+                    >
+                        <Link className="no-style-link" to={"/cadastro"}>
+                        Cadastrar Item
+                        </Link>
+                        
                     </button>
                 </div>
                         

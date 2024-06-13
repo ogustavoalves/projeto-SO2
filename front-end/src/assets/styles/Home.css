@@ -54,10 +54,38 @@
 }
 
 .search-button:hover {
+    background-color: var(--cor-ativa);
+    filter: brightness(1.1);
+}
+
+.cadastro-button {
+    height: 1.9em;
+    margin-left: auto;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: var(--cor-fonte);
+    background-color: var(--cor-ativa);
+
+    font-size: 1rem;
+    font-weight: 500;
+    
+    text-decoration: none;
+}
+
+.no-style-link {
+    text-decoration: none; 
+    color: inherit; 
+    font: inherit; 
+}
+
+
+.cadastro-button:hover {
     
     background-color: var(--cor-ativa);
     filter: brightness(1.1);
 }
+
+
 
 .search-button:active {
     transform: scale(1.1);

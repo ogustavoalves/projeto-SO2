@@ -9,7 +9,7 @@ class itensTable {
         create table IF NOT EXISTS Item ( 
             id int primary key not null auto_increment,
             nome_item varchar(30),
-            foto_item varchar(150),
+            foto_item varchar(255),
             descricao_item varchar(40),
             valor_compra decimal(8,2),
             valor_venda decimal(8,2),
