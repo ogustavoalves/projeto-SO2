@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 import { App } from "../layouts/App"
 import { useForm } from "react-hook-form";
 import classNames from 'classnames';
-import '../assets/styles/LoginForm.css'
+import { useEffect, useState } from "react";
 
 export const SignIn = () => {
 
@@ -12,10 +12,28 @@ export const SignIn = () => {
         formState: { errors },
     } = useForm();
 
+    const navigate = useNavigate();
+    const [loginError, setLoginError] = useState("");
+
+    useEffect(() => {
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        if (isLoggedIn) {
+            navigate('/');
+        }
+    }, [navigate]);
+
+
+
     const handleFormSubmit = ({ email, password }) => {
-        console.log("ACESSANDO APLICAÇÃO", email, password);
+        if (email === "admin@admin.com" && password === "admin") {
+            localStorage.setItem('isLoggedIn', 'true');
+            navigate('/home');
+        } else {
+            setLoginError("Invalid email or password");
+        }
     };
 
+    
     return (
         <App>
             <div className="login-form-container">
@@ -52,7 +70,7 @@ export const SignIn = () => {
                             {...register("password", {
                                 required: true,
                                 maxLength: 255,
-                                minLength: 8,
+                                minLength: 5,
                             })}
                             type="password" 
                             placeholder="Senha" 
@@ -73,6 +91,11 @@ export const SignIn = () => {
                         ) : null }
 
                     </div>
+                    {loginError && (
+                        <span className="input-error-message">
+                            {loginError}
+                        </span>
+                    )}
                     <button type="submit" className="submit-button">Acessar</button>
                 </form>
 
@@ -84,7 +107,7 @@ export const SignIn = () => {
                         </Link>
                     </span>
                     </p>
-            </div>
+            </div>    
         </App>
     )
 }

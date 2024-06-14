@@ -15,6 +15,9 @@ export const Home = () => {
     // função de busca
     const [searchValue, setSearchValue] = useState('');
 
+    
+    
+
     function handleSearch(){
         console.log(`Search Value: ${searchValue}`);
         
@@ -44,7 +47,9 @@ export const Home = () => {
     }
     //----------
     
-
+    const handleDelete = (id) => {
+        setData(data.filter(item => item.id !== id));
+    };
 
     return (
         <App>
@@ -82,7 +87,7 @@ export const Home = () => {
                 </div>
                 <div className="itens-wrapper">
                     
-                    {data.map((item, index) => (<ItemCard props={item} key={index}/>))}
+                    {data.map((item, index) => (<ItemCard props={item} key={index} onDelete={handleDelete}/>))}
                      
                     
                 </div>                

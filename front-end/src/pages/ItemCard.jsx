@@ -9,7 +9,7 @@ const api = axios.create ({
     baseURL: 'http://localhost:3000/'
 })
 
-export const ItemCard = ({props}) => {
+export const ItemCard = ({props, onDelete}) => {
 
     const [isEditMode, setIsEditMode] = useState(false);
     const [itemData, setItemData] = useState(props);
@@ -44,7 +44,18 @@ export const ItemCard = ({props}) => {
         });
     };
 
-
+    const handleDelete = () => {
+        api.delete(`itens/${itemData.id}`).then(res => {
+            console.log('Item deletado:', res.data);
+            onDelete(itemData.id);
+            setSuccess(true);
+            setError('');
+        }).catch(err => {
+            setError(err.message);
+            setSuccess(false);
+            console.log('Error:', err);
+        });
+    };
 
     return (
         <App>
@@ -74,7 +85,7 @@ export const ItemCard = ({props}) => {
                 </div>
                 <div className="buttons-container">
                     <button className="edit-button" onClick={handleEditClick}><p>editar</p></button>
-                    <button className="delete-button"><p>excluir</p></button>
+                    <button className="delete-button" onClick={handleDelete}><p>excluir</p></button>
                 </div>
             </div>
 

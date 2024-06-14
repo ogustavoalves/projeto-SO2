@@ -13,10 +13,32 @@
     background: rgba(255, 255, 255, 0.3);
 }
 
+.logo {
+    width: fit-content;
+    margin-left: 7rem;
+    
+}
+
 .logo h1 {
     font-weight: 600;
+    color: rgba(255, 255, 255, 0.9 );
     font-size: 1.5rem;
-    margin-left: 7rem;
+}
+
+.logo button {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255,0.1 );
+    padding: 0.5em;
+}
+
+.logo button:hover {
+    cursor: pointer;
+    
+}
+
+.logo button:active {
+    transform: scale(1.1);
 }
 
 .email-wrapper {
