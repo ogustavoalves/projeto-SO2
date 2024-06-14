@@ -1,7 +1,7 @@
 import '../assets/styles/Header.css';
 import { App } from "../layouts/App"
 import { useNavigate } from 'react-router-dom';
-
+import React, { useState } from 'react';
 
 export const Header = () => {
     const navigate = useNavigate();
@@ -16,7 +16,6 @@ export const Header = () => {
         navigate('/')
     }
 
-
     return (
         <App>
             <div className='header-wrapper'>
@@ -28,7 +27,7 @@ export const Header = () => {
                     </div>
                     <div className="email-wrapper">
                         <p className="email-paragraph">
-                            email@email.com
+                            
                         </p>
                         <button className="logout-button" onClick={handleLogout}>
                             Sair
