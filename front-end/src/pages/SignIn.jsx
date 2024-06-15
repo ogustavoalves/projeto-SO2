@@ -3,6 +3,7 @@ import { App } from "../layouts/App"
 import { useForm } from "react-hook-form";
 import classNames from 'classnames';
 import { useEffect, useState } from "react";
+import '../assets/styles/LoginForm.css';
 
 export const SignIn = () => {
 
