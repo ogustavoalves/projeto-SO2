@@ -1,9 +1,9 @@
 import { Link, useNavigate  } from "react-router-dom";
-import { App } from "../layouts/App"
+import { App } from "../../layouts/App"
 import { useForm } from "react-hook-form";
 import classNames from 'classnames';
 import { useEffect, useState } from "react";
-import '../assets/styles/LoginForm.css';
+import './SignIn.css';
 
 export const SignIn = () => {
 

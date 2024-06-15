@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 
-import { SignIn } from "./SignIn.jsx"
+import { SignIn } from "./Sign-in/SignIn.jsx"
 
 import { Home } from "./Home.jsx";
 import { ItensCadastro } from "./ItensCadastro.jsx";
