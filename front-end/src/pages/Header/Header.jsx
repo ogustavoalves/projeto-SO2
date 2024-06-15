@@ -1,4 +1,4 @@
-import { App } from "../layouts/App"
+import { App } from "../../layouts/App"
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
 import '../assets/styles/Header.css';

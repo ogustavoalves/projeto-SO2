@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { App } from "../layouts/App"
 import ItemCard from "./ItemCard";
-import Header from "./Header"
+import Header from "./Header/Header"
 import '../assets/styles/Home.css';
 import axios from "axios";
 import { Link } from "react-router-dom";

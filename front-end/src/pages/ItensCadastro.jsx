@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { App } from "../layouts/App"
-import { Header } from "../pages/Header"
+import { Header } from "./Header/Header"
 import '../assets/styles/CadastroItens.css'
 import { useForm } from "react-hook-form";
 import axios from "axios";
