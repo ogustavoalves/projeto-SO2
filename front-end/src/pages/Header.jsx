@@ -1,7 +1,7 @@
-import '../assets/styles/Header.css';
 import { App } from "../layouts/App"
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
+import '../assets/styles/Header.css';
 
 export const Header = () => {
     const navigate = useNavigate();
