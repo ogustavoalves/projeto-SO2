@@ -14,7 +14,10 @@ const userTable = require("./infra/userTable");
 // itensTable.init(connection);
 // userTable.init(connection);
 
-app.use(cors())
+app.use(cors({
+    origin: 'http://54.82.122.157',
+
+}));
 
 router(app, express);
 
