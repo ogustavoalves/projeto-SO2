@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'http://18.215.181.114:3000/'
+    baseURL: 'http://54.82.122.157:3000/'
 })
 
 export const  ItensCadastro = () => {
