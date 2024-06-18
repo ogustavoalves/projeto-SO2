@@ -15,7 +15,7 @@ const userTable = require("./infra/userTable");
 // userTable.init(connection);
 
 app.use(cors({
-    origin: 'http://54.82.122.157',
+    origin: 'http://54.82.122.157:5173',
 
 }));
 
