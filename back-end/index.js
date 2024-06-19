@@ -3,7 +3,7 @@ const cors = require('cors')
 const router = require("./routes/");
 
 const app = express();
-const port = 3000;
+const port = 3000;k
 const connection = require("./infra/connection");
 const itensTable = require("./infra/itensTable");
 const userTable = require("./infra/userTable");
@@ -15,7 +15,7 @@ const userTable = require("./infra/userTable");
 // userTable.init(connection);
 
 app.use(cors({
-    origin: 'http://54.82.122.157:5173',
+    origin: 'http://3.89.100.45:5173',
 
 }));
 
