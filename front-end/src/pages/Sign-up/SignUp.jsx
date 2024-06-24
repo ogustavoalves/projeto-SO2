@@ -1,74 +1,70 @@
-import { Link, useNavigate  } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { App } from "../../layouts/App"
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import classNames from 'classnames';
-import { useEffect, useState } from "react";
-import './SignIn.css';
+import "../Sign-up/SignUp.css";
 import axios from "axios";
 
 const api = axios.create({
     baseURL: 'http://localhost:3000/'
 });
 
-export const SignIn = () => {
 
-    const [userData, setUserData] = useState([]);
-    const [dataError, setDataError] = useState('');
+export const SignUp = () => {
+
     
-    useEffect(() => {
-        api.get('/user').then(res => {
-            console.log('Fetched data: ', res.data);
-            setUserData(res.data);
-        }).catch(err => {
-            setDataError(err);
-            console.log('Error', err);
-        })
-    }, []);
 
 
+
+    //useForm
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm();
 
+
+    //hooks form
     const navigate = useNavigate();
-    const [loginError, setLoginError] = useState("");
-
-    useEffect(() => {
-        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-        if (isLoggedIn) {
-            navigate('/');
-        }
-    }, [navigate]);
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState(false);
 
 
+    const handleFormSubmit = (data) => {
 
-    const handleFormSubmit = ({ email, password }) => {
+        api.post('/user', data).then(res => {
+            console.log('User saved:', res.data);
+            setSuccess(true);
+            navigate('/sign-in');
+            setError('');
+            reset();
+            
+        }).catch(err => {
+            setError(err.message);
+            setSuccess(false);
+            console.log('Error:', err);
+        })
 
-        const user = userData.find(user => user.email === email && user.password === password)
-
-        if (user) {
-            localStorage.setItem('isLoggedIn', 'true');
-            navigate('/home');
-        } else {
-            setLoginError("Invalid email or password");
-        }
+        // console.log("ACESSANDO APLICAÇÃO", email, password);
     };
 
-    
     return (
         <App>
             <div className="login-form-container">
-                <h1 className="login-form-title">Login</h1>
-                <form className="login-form" autoComplete="on" onSubmit={handleSubmit(handleFormSubmit)}>
-                <div className="input-wrapper">
+                <h1 className="login-form-title">Cadastro</h1>
+                {error && <div className="error">Error: {error}</div>}
+                {success && <div className="success">User added successfully!</div>}
 
-                        <input 
+                <form className="login-form" autoComplete="on" onSubmit={handleSubmit(handleFormSubmit)}>
+                    <div className="input-wrapper">
+                        <input
                             {...register("email", {
                                 required: true,
                                 maxLength: 255,
-                                minLength: 5,
+                                minLength: 10,
                                 
                             })}
                             type="email" 
@@ -89,7 +85,7 @@ export const SignIn = () => {
                             </span>
                         ) : null }
 
-                        <input
+                        <input 
                             {...register("password", {
                                 required: true,
                                 maxLength: 255,
@@ -114,25 +110,21 @@ export const SignIn = () => {
                         ) : null }
 
                     </div>
-                    {loginError && (
-                        <span className="input-error-message">
-                            {loginError}
-                        </span>
-                    )}
-                    <button type="submit" className="submit-button">Acessar</button>
+                    
+                    <button className="submit-button" >Criar Conta</button>
                 </form>
 
                 <p className="login-form-paragraph">
-                    Não possui uma conta?
+                    Já possui cadastro?
                     <span>
-                        <Link className="" to={"/sign-up"}>
-                            Crie uma agora!
+                        <Link className="" to={"/sign-in"}>
+                            Acessar conta
                         </Link>
                     </span>
-                    </p>
-            </div>    
+                </p>
+            </div>
         </App>
     )
 }
 
-export default SignIn;
+export default SignUp;

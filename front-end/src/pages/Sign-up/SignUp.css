@@ -1,0 +1,130 @@
+.login-form-container {
+    margin: 20vh auto;
+    width: 35vw;
+    height: 55vh;
+    padding: 1rem;
+    
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.2px);
+    -webkit-backdrop-filter: blur(4.2px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.login-form-title {
+    margin: 1.3vh 0vh 3.5vh;
+    font-size: 2.7rem;
+    font-weight: 500;
+}
+
+.error {
+    margin-top: 1vh;
+}
+
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5vh;
+    
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18vw;
+    gap: 0.8vw;
+}
+
+.input-style {
+    padding: 0.7rem;
+    width: 25vw;
+    /* height: 4vh; */
+    border: none;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.input-style::placeholder {
+    color: var(--cor-ativa);
+    filter: brightness(0.9);
+    
+}
+
+.input-error {
+    border: 2px solid red;
+    
+}
+
+.input-error-message {
+    font-size: large;
+    color: red;
+    padding-left: 3px;
+}
+
+.submit-button {
+    width: 9vw;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: var(--cor-fonte);
+    background-color: var(--cor-ativa);
+    padding: 0.5rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 1.5vh ;
+}
+
+.submit-button:hover {
+    background-color: var(--cor-ativa);
+    filter: brightness(1.1);
+    
+}
+
+.submit-button:active {
+    transform: scale(1.1);
+}
+
+.login-form-paragraph {
+    margin-top: 1.5vh;
+    display: flex;
+    gap: 4px;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.login-form-paragraph a { 
+    text-decoration: none;
+    color: var(--cor-fonte);
+}
+
+
+.login-form-paragraph a:hover {
+    text-decoration: none;
+    color: var(--cor-ativa);
+    filter: brightness(1.3);
+}
+
+@media only screen and (max-width: 1350px) {
+    .form-container p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1px;
+    }
+
+    .submit-button {
+        width: 9vw;
+    }
+  }

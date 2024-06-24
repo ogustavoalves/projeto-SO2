@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 
 const api = axios.create ({
-    baseURL: 'http://3.89.100.45:3000/'
+    baseURL: 'http://localhost:3000/'
 })
 
 export const ItemCard = ({props, onDelete}) => {
