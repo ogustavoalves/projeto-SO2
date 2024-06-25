@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import classNames from 'classnames';
-import "../Sign-up/SignUp.css";
 import axios from "axios";
+import "../Sign-up/SignUp.css";
 
 const api = axios.create({
     baseURL: 'http://localhost:3000/'
@@ -15,10 +15,6 @@ const api = axios.create({
 export const SignUp = () => {
 
     
-
-
-
-    //useForm
     const {
         register,
         handleSubmit,
@@ -26,8 +22,6 @@ export const SignUp = () => {
         formState: { errors },
     } = useForm();
 
-
-    //hooks form
     const navigate = useNavigate();
     const [error, setError] = useState('');
     const [success, setSuccess] = useState(false);
@@ -48,7 +42,6 @@ export const SignUp = () => {
             console.log('Error:', err);
         })
 
-        // console.log("ACESSANDO APLICAÇÃO", email, password);
     };
 
     return (

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { App } from "../layouts/App"
-import ItemCard from "./ItemCard";
-import Header from "./Header/Header"
-import '../assets/styles/Home.css';
+import { App } from "../../layouts/App"
+import ItemCard from "../ItemCard/ItemCard";
+import Header from "../Header/Header"
 import axios from "axios";
 import { Link } from "react-router-dom";
+import './Home.css';
 
 const api = axios.create({
     baseURL: 'http://localhost:3000/'
@@ -20,16 +20,13 @@ export const Home = () => {
 
     const [filteredData, setFilteredData] = useState([]);
 
-    // const handleSearch = (e) => {
-    //     setSearchValue(e.target.value);
-    // };
-    //--------------
+    
 
     
     
     useEffect(() => {
         api.get('/itens').then(res => {
-            console.log('Fetched data:', res.data);
+            // console.log('Fetched data:', res.data);
             setData(res.data);
             setFilteredData(res.data);
         }).catch(err => {

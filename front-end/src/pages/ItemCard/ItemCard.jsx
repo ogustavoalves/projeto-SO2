@@ -1,9 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { App } from "../layouts/App"
-import '../assets/styles/ItemCard.css'
+import { App } from "../../layouts/App"
 import { useEffect } from "react";
-
+import './ItemCard.css'
 
 const api = axios.create ({
     baseURL: 'http://localhost:3000/'

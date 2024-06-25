@@ -3,8 +3,8 @@ import { App } from "../../layouts/App"
 import { useForm } from "react-hook-form";
 import classNames from 'classnames';
 import { useEffect, useState } from "react";
-import './SignIn.css';
 import axios from "axios";
+import './SignIn.css';
 
 const api = axios.create({
     baseURL: 'http://localhost:3000/'
@@ -17,7 +17,7 @@ export const SignIn = () => {
     
     useEffect(() => {
         api.get('/user').then(res => {
-            console.log('Fetched data: ', res.data);
+            // console.log('Fetched data: ', res.data);
             setUserData(res.data);
         }).catch(err => {
             setDataError(err);

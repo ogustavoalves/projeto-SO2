@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { App } from "../layouts/App"
-import { Header } from "./Header/Header"
-import '../assets/styles/CadastroItens.css'
+import { App } from "../../layouts/App"
+import { Header } from "../Header/Header"
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import './ItensCadastro.css'
 
 const api = axios.create({
     baseURL: 'http://localhost:3000/'

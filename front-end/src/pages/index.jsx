@@ -1,14 +1,12 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-
 import { SignIn } from "./Sign-in/SignIn.jsx";
 import { SignUp } from "./Sign-up/SignUp.jsx";
-import { Home } from "./Home.jsx";
-import { ItensCadastro } from "./ItensCadastro.jsx";
+import { Home } from "./Home/Home.jsx";
+import { ItensCadastro } from "./ItensCadastro/ItensCadastro.jsx";
 import ProtectedRoute from "./ProtectedRoute.jsx";
 
 
 export const Pages = () => {
-    
     
     return (
         <Router>
