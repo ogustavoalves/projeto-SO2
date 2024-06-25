@@ -11,11 +11,11 @@ const userTable = require("./infra/userTable");
 
 
 
-// itensTable.init(connection);
-// userTable.init(connection);
+itensTable.init(connection);
+userTable.init(connection);
 
 app.use(cors({
-    origin: 'http://3.89.100.45:5173',
+    origin: 'http://localhost:5173',
 
 }));
 

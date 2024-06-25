@@ -3,34 +3,28 @@ const connection = require("../infra/connection");
 
 class userModel {
 
+    executeQuery(sql, param = "") {
+        return new Promise((resolve, reject) => {
+            connection.query(sql, param, (error, answer) => {
+                if(error) {
+                    return reject(error);
+                }
+                return resolve(answer);
+            })
+        })
+    }
+
+
     createUser(newUser) {
         const sql = "INSERT INTO Usuario SET ?";
         
-        return new Promise((resolve, reject) => {
-            connection.query(sql, newUser, (error, resp) => {
-                if(error) {
-                    console.log("Erro ao criar usuário" + error.stack);
-                    return reject(error)
-                }
-                console.log("Usuário criado com sucesso")
-                resolve(resp)
-            });
-        }); 
+        return this.executeQuery(sql, newUser)
     }
 
     readUser() {
         const sql = "SELECT * FROM Usuario;"
 
-        return new Promise((resolve, reject) => {
-            connection.query(sql, {}, (error, resp) => {
-                if(error) {
-                    console.log('Houve um erro ao ler usuários' + error.stack);
-                    reject(error);
-                }
-                console.log('funcionando perfeitamente');
-                resolve(resp);
-            });
-        });
+        return this.executeQuery(sql);
     }
 
 

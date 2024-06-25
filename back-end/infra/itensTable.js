@@ -27,8 +27,8 @@ class itensTable {
                 console.log(error);
                 return;
             }
-            console.log("Conexão estabelecida com sucesso")
-            console.log("Tabela Itens criada com sucesso")
+            // console.log("Conexão estabelecida com sucesso")
+            // console.log("Tabela Itens criada com sucesso")
         });
     }
 
