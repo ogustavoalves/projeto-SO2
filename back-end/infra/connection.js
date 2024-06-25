@@ -10,3 +10,10 @@ const connection = mysql.createConnection({
 });
 
 module.exports = connection;
+
+
+
+// crie um arquivo infra/default.json com a estrutura:
+// { connection: {password: your_db_password} }
+// para inserir a senha.
+
