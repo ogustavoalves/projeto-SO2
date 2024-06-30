@@ -2,21 +2,23 @@ const userModel = require("../models/userModel");
 
 class userController {
 
-    create(newUser) {
-        return userModel.createUser(newUser);
+    create(req, res) {
+        const newUser = req.body;
+        const answer = userModel.createUser(newUser);
+
+        answer
+        .then((user) => res.status(201).json(user))
+        .catch((error) => res.status(400).json(error.message));     
     }
 
-    read() {
-        return userModel.readUser();
+    read(req, res) {
+        const answer = userModel.readUser();
+
+        answer
+        .then((users) => res.status(200).json(users))
+        .catch((error) => res.status(400).json(error.message))
     }
 
-    // update(id) {
-    //     return `atualizando usuário ${id}...`;
-    // }
-
-    // delete(id) {
-    //     return `deletando usuário ${id}...`;
-    // }
 }
 
 module.exports = new userController();

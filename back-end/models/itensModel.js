@@ -14,25 +14,25 @@ class ItensModel {
     }
 
 
-    createItens(newItem) {
+    createItem(newItem) {
         const sql = "INSERT INTO Item SET ?";
         
         return this.executeQuery(sql, newItem)
     }
 
-    readItens() {
+    readItem() {
         const sql = "SELECT * FROM Item;"
 
         return this.executeQuery(sql)
     }
 
-    updateItens(itemToUpdate, id) {
+    updateItem(itemToUpdate, id) {
         const sql = "UPDATE Item SET ? WHERE id = ? ;"
 
         return this.executeQuery(sql, [itemToUpdate, id])
     }
 
-    deleteItens(id) {
+    deleteItem(id) {
         const sql = "DELETE FROM Item WHERE id = ?;";
 
         return this.executeQuery(sql, id)

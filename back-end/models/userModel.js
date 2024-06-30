@@ -1,6 +1,5 @@
 const connection = require("../infra/connection");
 
-
 class userModel {
 
     executeQuery(sql, param = "") {
@@ -18,7 +17,7 @@ class userModel {
     createUser(newUser) {
         const sql = "INSERT INTO Usuario SET ?";
         
-        return this.executeQuery(sql, newUser)
+        return this.executeQuery(sql, newUser);
     }
 
     readUser() {
