@@ -17,12 +17,7 @@
 .logo h1 {
     font-weight: 600;
     color: rgba(255, 255, 255, 0.9 );
-    filter: brightness(0.9);
     font-size: 1.5rem;
-}
-
-.logo h1:hover {
-    filter: brightness(1.5);
 }
 
 .logo button {
@@ -58,7 +53,6 @@
     
     font-weight: 500;
     font-size: 1.1rem;
-    
 }
 
 .logout-button:hover {

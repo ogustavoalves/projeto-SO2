@@ -77,7 +77,7 @@ export const ItemCard = ({props, onDelete}) => {
                     
 
                     <h5>Descrição</h5>
-                    <p className="descricao-container">
+                    <p className="description-container">
                     {props.descricao_item}
                     </p>
                     

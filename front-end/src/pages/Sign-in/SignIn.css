@@ -4,7 +4,6 @@
     height: 45vh;
     padding: 1rem;
     
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,7 +44,7 @@
 .input-style {
     padding: 0.7rem;
     width: 25vw;
-    /* height: 4vh; */
+    
     border: none;
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -54,12 +53,10 @@
 .input-style::placeholder {
     color: var(--cor-ativa);
     filter: brightness(0.9);
-    
 }
 
 .input-error {
-    border: 2px solid red;
-    
+    border: 2px solid red; 
 }
 
 .input-error-message {
@@ -83,7 +80,6 @@
 .submit-button:hover {
     background-color: var(--cor-ativa);
     filter: brightness(1.1);
-    
 }
 
 .submit-button:active {
@@ -103,7 +99,6 @@
     color: var(--cor-fonte);
 }
 
-
 .login-form-paragraph a:hover {
     text-decoration: none;
     color: var(--cor-ativa);
@@ -121,4 +116,4 @@
     .submit-button {
         width: 9vw;
     }
-  }
+}
