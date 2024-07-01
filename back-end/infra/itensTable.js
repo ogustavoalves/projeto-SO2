@@ -23,12 +23,10 @@ class itensTable {
         `
         this.connection.query(sql, (error) => {
             if(error) {
-                console.log("Erro ao criar tabela Itens");
-                console.log(error);
+                console.log("Error creating Itens table", error);
                 return;
             }
-            // console.log("Conexão estabelecida com sucesso")
-            // console.log("Tabela Itens criada com sucesso")
+            
         });
     }
 

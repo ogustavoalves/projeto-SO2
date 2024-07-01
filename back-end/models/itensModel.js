@@ -4,12 +4,16 @@ class ItensModel {
 
     executeQuery(sql, param = "") {
         return new Promise((resolve, reject) => {
-            connection.query(sql, param, (error, answer) => {
-                if(error){
-                    return reject(error);
-                }
-                return resolve(answer);
-            });   
+            try {
+                connection.query(sql, param, (error, answer) => {
+                    if(error){
+                        return reject(error);
+                    }
+                    return resolve(answer);
+                });
+            } catch(error) {
+                reject(error);
+            }
         });
     }
 

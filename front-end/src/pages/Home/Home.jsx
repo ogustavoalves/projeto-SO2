@@ -12,21 +12,14 @@ const api = axios.create({
 
 export const Home = () => {
     
-    // função de busca
     const [searchValue, setSearchValue] = useState('');
-    //get data
     const [data, setData] = useState([]);
     const [error, setError] = useState('');
-
     const [filteredData, setFilteredData] = useState([]);
 
-    
 
-    
-    
     useEffect(() => {
         api.get('/itens').then(res => {
-            // console.log('Fetched data:', res.data);
             setData(res.data);
             setFilteredData(res.data);
         }).catch(err => {
@@ -51,7 +44,6 @@ export const Home = () => {
     if (!data) {
         return <div>Loading...</div>;
     }
-    //----------
     
     const handleDelete = (id) => {
         setData(data.filter(item => item.id !== id));

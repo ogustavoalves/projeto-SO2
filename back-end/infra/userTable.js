@@ -15,12 +15,10 @@ class usersTable {
         `
         this.connection.query(sql, (error) => {
             if(error) {
-                console.log("Erro ao criar tabela Usuários");
-                console.log(error);
+                console.log("Error creating Users table: ", error);
                 return;
             }
-            // console.log("Conexão estabelecida com sucesso")
-            // console.log("Tabela Usuários criada com sucesso")
+    
         });
     }
 }

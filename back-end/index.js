@@ -23,7 +23,7 @@ router(app, express);
 
 app.listen(port, (error) => {
     if(error) {
-        console.log("Error", error);
+        console.log(`Failed to start server on port ${port}:`, error);
         return;
     }
     console.log(`Server running on http://localhost:${port}`);

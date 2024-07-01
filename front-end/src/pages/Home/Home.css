@@ -53,6 +53,7 @@
 
     font-size: 1rem;
     font-weight: 500;
+    
 }
 
 .search-button:hover {
@@ -104,4 +105,12 @@
 
     margin-left: auto;
     
+}
+
+
+@media (width <= 1000px) {
+    .itens-wrapper {
+        display: flex;
+        width: 60vw;
+    }
 }
